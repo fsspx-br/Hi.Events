@@ -255,6 +255,23 @@ Platform fees researched 2026-07-17 (organizer-absorbs view; all also offer pass
 | Doity/Even3 | ~39/mo | ~21/mo | ~22/mo |
 | Sympla | ~18/mo | ~15/mo | ~13/mo |
 
+### Hi.Events Cloud (their SaaS) vs our self-host
+
+Cloud pricing (2026-07-17): **US$0.40 + 0.75% per paid ticket** (passed to the buyer by default), Stripe processing **separate**, free events free, no monthly fee. Same software, zero ops.
+
+Per R$30 ticket (US$ at ~R$5.10): platform fee ≈ R$2.04 + R$0.23 = **~R$2.27**, on top of the same Stripe ~R$1.59 → total ~R$3.86 (12.9%) if absorbed, vs our R$1.59 + R$55/mo fixed.
+
+| Tickets/mo (R$30, card) | Cloud (fees only) | Self-host (R$55 + Stripe) |
+|---|---|---|
+| 20 | R$77 ✓ | R$87 |
+| 50 | R$193 | **R$134** ✓ |
+| 100 | R$386 | **R$214** ✓ |
+| 300 | R$1,158 | **R$531** ✓ |
+
+**Break-even ≈ 24 tickets/mo** — above that, self-hosting is cheaper; the R$55 fixed cost replaces a ~R$2.27/ticket platform fee. Below ~24/mo (or zero appetite for ops), Cloud is the better Hi.Events: identical features, no VPS, no maintenance.
+
+⚠️ **Open question before relying on Cloud: Brazilian organizer support.** It runs on Stripe Connect, and Stripe restricts cross-border Connect for Brazil (BR accounts settle only in BRL, cross-border transfers unsupported). Whether a BR organizer + BRL events work on their Cloud needs a test signup or an ask to their support — if not, self-host is the only Hi.Events route for us anyway.
+
 ### The non-money factors
 
 **Platforms win on:** marketplace discovery (Sympla especially — real audience you don't have to bring), buyer trust in a known brand, they eat support/refund/chargeback handling, zero setup and zero ops, free events cost nothing (Hi.Events' R$55/mo runs regardless).
