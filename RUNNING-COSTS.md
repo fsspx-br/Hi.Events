@@ -215,6 +215,58 @@ Regra de bolso: **o sistema inteiro custa o equivalente a ~2 ingressos de R$ 30 
 2. **Native Pix provider in the fork (0–1%)** — build after PR #1038 merges, using it as the template; banks like Inter PJ offer free Pix APIs (verify terms). Aim to upstream = maintenance moves upstream.
 3. **Stripe Pix (1.19%)** — zero work, wait for invite; needs 60 days of processing history + good standing.
 
+## 11. Is self-hosting worth it? — vs Brazilian ticket platforms
+
+Platform fees researched 2026-07-17 (organizer-absorbs view; all also offer passing fees to the buyer):
+
+| Platform | Fee on paid tickets | Minimum | Extras / payout |
+|---|---|---|---|
+| **Hi.Events self-hosted** | Stripe 3.99% + R$0.39 (Pix manual 0% / Stripe Pix 1.19% later) | — | + ~R$55/mo fixed; payout D+2 rolling |
+| **Eventiza** | **7.9%** (card, Pix or transfer — same fee) | R$2.50 | free events: R$0 |
+| **Sympla** | 10% service **+ 2–2.5% processing (NOT passable — organizer always pays it)** | R$3.99 (tickets ≤ R$39.90) | biggest marketplace/discovery |
+| **Doity** | 10% | none | payout 14 days, no antecipação |
+| **Even3** | 10% | R$2.50 (tickets ≤ R$25) | payout ~13 business days; academic focus |
+
+### Cost per R$30 ticket (organizer absorbs everything)
+
+| | Fee | You keep |
+|---|---|---|
+| Hi.Events + manual Pix | R$0.00 | **R$30.00** |
+| Hi.Events + Stripe card | R$1.59 (5.3%) | **R$28.41** |
+| Eventiza | R$2.50 (8.3% — min fee kicks in) | R$27.50 |
+| Doity / Even3 | R$3.00 (10%) | R$27.00 |
+| Sympla | ~R$4.67 (15.6% — R$3.99 min + ~2.25% processing) | ~R$25.33 |
+
+### Monthly totals — R$30 tickets, all on card, absorbing fees
+
+| Tickets/mo | Hi.Events (R$55 + fees) | Eventiza | Doity/Even3 | Sympla |
+|---|---|---|---|---|
+| 20 | **R$87** | R$50 ✓ | R$60 | R$93 |
+| 50 | R$134 | R$125 ✓ | R$150 | R$233 |
+| 100 | **R$214** ✓ | R$250 | R$300 | R$467 |
+| 300 | **R$531** ✓ | R$750 | R$900 | R$1,400 |
+| 1,000 | **R$1,642** ✓ | R$2,500 | R$3,000 | R$4,668 |
+
+### Break-even (tickets/month where self-hosting becomes cheaper)
+
+| vs | R$30 ticket | R$50 ticket | With ~half manual Pix |
+|---|---|---|---|
+| Eventiza | ~60/mo | ~35/mo | ~32/mo |
+| Doity/Even3 | ~39/mo | ~21/mo | ~22/mo |
+| Sympla | ~18/mo | ~15/mo | ~13/mo |
+
+### The non-money factors
+
+**Platforms win on:** marketplace discovery (Sympla especially — real audience you don't have to bring), buyer trust in a known brand, they eat support/refund/chargeback handling, zero setup and zero ops, free events cost nothing (Hi.Events' R$55/mo runs regardless).
+
+**Self-hosting wins on:** every buyer email is **yours** (remarketing for the next event), own domain/brand, payout in D+2 rolling vs 13–14 days (Doity/Even3) — cash flow during multi-batch sales, no 10% creep as you scale, and the subtler one: **passing on ~5% instead of ~10–13% means the buyer sees a cheaper final price for the same net to you** — better conversion at equal margin.
+
+### Verdict
+
+- **Own recurring audience + ≥ ~50–60 paid tickets/mo (R$30) → self-hosting clearly wins**, and the gap compounds: at 300 tickets/mo you save ~R$220/mo vs Eventiza and ~R$870 vs Sympla; at 1,000/mo, ~R$860 and ~R$3,000 respectively.
+- **Occasional/small events (< ~40/mo), mostly free events, or you NEED discovery traffic → a platform is cheaper and simpler**; of the researched ones, Eventiza has the best fee structure (verify whether their fee can be passed to buyers).
+- Our case (recurring community events, audience already ours, no discovery needed): the platforms' main asset is worthless to us — **self-hosting is worth it once volume clears ~50 tickets/mo, and manual Pix pulls that threshold down fast**.
+
 ## Verification log (2026-07-17)
 
 | Item | Verdict |
@@ -239,3 +291,6 @@ Regra de bolso: **o sistema inteiro custa o equivalente a ~2 ingressos de R$ 30 
 - registro.br: https://registro.br/dominio/
 - Oracle free tier: https://www.infoq.com/news/2026/07/oracle-cloud-free-tier-limits/
 - WhatsApp add-on: https://www.messagecentral.com/blog/whatsapp-business-api-pricing-brazil
+- Sympla fees: https://produtores.sympla.com.br/quanto-custa/ · https://ajuda.produtor.sympla.com.br/hc/pt-br/articles/15445173235085
+- Eventiza fees: https://eventiza.com.br/faq/organizador/financeiro/quanto-custa-para-utilizar
+- Even3 fees: https://ajuda.even3.com.br/hc/pt-br/articles/204182645 · Doity: https://doity.com.br/plataforma-de-eventos
